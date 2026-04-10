@@ -46,14 +46,25 @@
       class="hero-image"
       (mousemove)="onImageMouseMove($event)"
       (mouseleave)="onImageMouseLeave()"
+      (mousedown)="onDragStart($event)"
     >
       <div class="glow"></div>
 
       <img
         src="images/profile.webp"
         alt="Daniel Fariña"
-        [style.transform]="'translate(' + imageOffsetX + 'px, ' + imageOffsetY + 'px) scale(' + imageScale + ')'"
+        [style.transform]="getImageTransform()"
+        draggable="false"
       />
     </div>
   </div>
+
+  <button
+    type="button"
+    class="scroll-down"
+    (click)="scrollToProjects()"
+    aria-label="Ir a proyectos"
+  >
+    <i class="bi bi-arrow-down-short"></i>
+  </button>
 </section>

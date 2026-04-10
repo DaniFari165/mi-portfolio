@@ -2,16 +2,19 @@
   min-height: 100vh;
   background:
     radial-gradient(
-      ellipse 80% 35% at top center,
-      rgba(56, 189, 248, 0.22) 0%,
-      rgba(56, 189, 248, 0.10) 28%,
-      rgba(56, 189, 248, 0.04) 45%,
-      transparent 70%
+      ellipse 90% 30% at top center,
+      rgba(56, 189, 248, 0.20) 0%,
+      rgba(56, 189, 248, 0.09) 30%,
+      rgba(56, 189, 248, 0.03) 50%,
+      transparent 72%
     ),
     linear-gradient(to bottom, #1e293b, #0f172a);
   color: white;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
 }
 
 .hero-content {
@@ -99,6 +102,9 @@
   justify-content: center;
   align-items: center;
   min-height: 320px;
+  user-select: none;
+  overflow: visible;
+  z-index: 3;
 }
 
 .glow {
@@ -127,8 +133,61 @@
   object-position: center;
   border-radius: 50%;
   border: 3px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.18s ease-out;
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out;
   will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-image img:active {
+  cursor: grabbing;
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  animation: arrowBounce 1.7s infinite;
+  transition:
+    color 0.25s ease,
+    filter 0.25s ease;
+  z-index: 4;
+}
+
+.scroll-down i {
+  display: block;
+  font-size: 46px;
+  line-height: 1;
+  text-shadow: 0 0 0 rgba(125, 211, 252, 0);
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.scroll-down:hover i {
+  color: #7dd3fc;
+  text-shadow: 0 0 14px rgba(125, 211, 252, 0.45);
+}
+
+@keyframes arrowBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(4px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -143,5 +202,13 @@
 
   .hero-image {
     margin-top: 30px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .scroll-down {
+    bottom: 12px;
   }
 }
