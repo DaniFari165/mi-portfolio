@@ -1,0 +1,59 @@
+<section class="hero" id="inicio">
+  <div class="section-container hero-content">
+    <div class="hero-text">
+      <h1>Hola, soy Daniel</h1>
+      <h2>Ingeniero en Sistemas</h2>
+
+      <p>
+        Disfruto construir aplicaciones web limpias y explorar tecnologías
+        como Angular, Unity y realidad virtual.
+      </p>
+
+      <div class="buttons">
+        <a
+          class="hero-btn linkedin"
+          href="https://www.linkedin.com/in/farina-daniel/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi bi-linkedin"></i>
+          LinkedIn
+        </a>
+
+        <a
+          class="hero-btn github"
+          href="https://github.com/DaniFari165"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+
+        <a
+          class="hero-btn mail"
+          href="mailto:danifari165@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi bi-envelope"></i>
+          Email
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="hero-image"
+      (mousemove)="onImageMouseMove($event)"
+      (mouseleave)="onImageMouseLeave()"
+    >
+      <div class="glow"></div>
+
+      <img
+        src="images/profile.webp"
+        alt="Daniel Fariña"
+        [style.transform]="'translate(' + imageOffsetX + 'px, ' + imageOffsetY + 'px) scale(' + imageScale + ')'"
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="projects" id="proyectos">
+  <div class="section-container projects-container">
+    <div class="projects-header">
+      <h2>Proyectos Destacados</h2>
+      <p>
+        Algunos de los proyectos en los que he trabajado, enfocados en desarrollo
+        web, realidad virtual y experiencias interactivas.
+      </p>
+    </div>
+
+    <div class="project-list">
+      <article class="project-card" *ngFor="let project of projects">
+        <div class="project-image-wrapper">
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+            class="project-image"
+          />
+        </div>
+
+        <div class="project-body">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+
+          <!-- TAGS -->
+          <div class="project-tags">
+            <span class="tag" *ngFor="let tag of project.tags">
+              {{ tag }}
+            </span>
+          </div>
+
+          <!-- BOTÓN -->
+          <a class="project-link" [routerLink]="project.route">
+            Ver detalles
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
