@@ -12,20 +12,20 @@ import { RouterModule } from '@angular/router';
 export class Projects {
   projects = [
     {
-      title: "Moloka'i – Business Web Platform",
+      title: "Web Moloka'i",
       description:
-        'Plataforma web enfocada en presentación de servicios y experiencia de usuario.',
+        'Sitio web corporativo del restaurante Moloka\'i, enfocado en la promoción de sus servicios, la visualización del menú y la mejora de la experiencia del usuario.',
       image: 'images/molokai.webp',
       route: '/projects/molokai',
       tags: ['React', 'Vite', 'Firebase', 'NodeJS']
     },
     {
-      title: 'Proyecto Unity VR',
+      title: 'Auto App',
       description:
-        'Experiencia interactiva en realidad virtual desarrollada con Unity.',
-      image: 'images/molokai.webp',
+        'Plataforma móvil de mantenimiento automotriz, creada para facilitar el seguimiento del estado de los vehículos y la programación de servicios preventivos.',
+      image: 'images/auto.webp',
       route: '/projects/unity-vr',
-      tags: ['Unity', 'C#', 'VR']
+      tags: ['React', 'Expo', 'NodeJS']
     },
     {
       title: "Moloka'i – Business Web Platform",
